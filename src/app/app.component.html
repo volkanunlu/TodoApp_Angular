@@ -1,0 +1,41 @@
+<div class="container">
+<h1 style="color: brown;">To Do List</h1>
+<form class="todo-form" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <input type="text" id="title" name="title" placeholder="Add something!"  ngModel>
+  
+  <div>
+    <button type="submit" class="btn-floating  waves-effect waves-light green"><i class="material-icons">add</i></button>
+  </div>
+</form>
+
+
+<ul class="todo-list">
+  <li *ngFor="let todo of todos">
+    <div *ngIf="!this.todo.isComplete"> <!--İf şartına bağladık, eğer tamamlanmadı ise-->
+      <div>{{this.todo.title}}</div>
+        <div>
+        <button (click)="onComplete(this.todo.id)"  class="btn-floating  waves-effect waves-light blue"><i class="material-icons">check</i></button>
+        <button (click)="onDelete(this.todo.id)" class="btn-floating waves-effect waves-light red"><i class="material-icons">delete</i></button>
+      <!--onComplete ve OnDelete metotlarımızı click eventlerimize bağladık-->
+      </div>
+    </div>
+  </li>
+  <br>
+  
+  <br>
+  <h5>Completed List</h5>  <!--Tamamlanan yapılacakların görüntüleneceği alan-->
+  <br>
+  <li *ngFor="let todo of todos">
+    <div>
+      <div *ngIf="this.todo.isComplete">  <!--İf şartına bağladık, tamamlandı ise-->
+        <div>{{this.todo.title}}
+        
+        <button (click)="onDelete(this.todo.id)" class="btn-floating waves-effect waves-light red"><i class="material-icons">delete</i></button>
+        <!--onDelete metotumuzu click eventimize bağladık-->
+      </div>
+      </div>
+    </div>
+  </li>
+</ul>
+</div>
+<router-outlet></router-outlet>
