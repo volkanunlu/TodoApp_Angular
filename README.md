@@ -15,6 +15,13 @@
 * AppRoutingModule
 * FormsModule
 
+## Todoapp Resim | Todoapp Image
+
+![todolistscreen](https://user-images.githubusercontent.com/36553214/165713056-901fdd74-1133-493f-b009-4a971a600f63.png)
+
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
